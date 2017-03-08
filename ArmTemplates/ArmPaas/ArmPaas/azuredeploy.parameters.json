@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webSiteName": {
+      "value": "cloudlabwebapp"
+    },
+    "azuresqlName": {
+      "value": "cloudlabwebappdbserver"
+    },
+    "hostingPlanName": {
+      "value": "cloudlabwebfarm"
+    },
+
+    "hostingPlanSkuName": {
+      "value": "S2"
+    },
+
+    "hostingPlanInstance": {
+      "value": 1
+    },
+
+    "administratorLogin": {
+      "value": "cloudlabadmin"
+    },
+    "prodDatabaseName": {
+      "value": "proddb"
+    },
+    "testDatabaseName": {
+      "value": "testdb"
+    }
+  }
+}

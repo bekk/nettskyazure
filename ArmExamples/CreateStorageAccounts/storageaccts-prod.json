@@ -1,0 +1,8 @@
+{
+    "storageAccountList": {
+        "value": [
+            { "name": "storage1991weprod", "location": "West Europe", "storageAccountType": "Standard_LRS" },
+            { "name": "storage1991neprod", "location": "North Europe", "storageAccountType": "Standard_GRS" }      
+            ]
+    }
+}

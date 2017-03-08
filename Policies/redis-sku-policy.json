@@ -1,0 +1,19 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "like": "Microsoft.Cache/Redis/*"
+      },
+      {
+        "not": {
+              "field": "Microsoft.Cache/Redis/sku.name",
+              "in": [ "Basic", "Standard" ]
+        }
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}

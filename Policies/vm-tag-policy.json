@@ -1,0 +1,27 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "not": {
+          "allOf": [
+            {
+              "field": "tags",
+              "containsKey": "department"
+            },
+            {
+              "field": "tags.department",
+              "in": [ "department1", "department2", "department3" ]
+            }
+          ]
+        }
+      },
+      {
+        "field": "type",
+        "equals": "Microsoft.Compute/virtualMachines"
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}

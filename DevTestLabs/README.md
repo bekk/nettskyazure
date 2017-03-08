@@ -2,3 +2,5 @@
 </a>
 
 This template allows you to deploy a new VM in an existing DevTestLab environment
+
+![configuration](DeployNewVM.png?raw=true "Configuration")

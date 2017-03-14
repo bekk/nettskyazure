@@ -7,7 +7,7 @@
     },
     "labName": {
       "type": "string",
-      "defaultValue": "CloudLab"
+      "defaultValue": "CloudLabs"
     },
     "size": {
       "type": "string",

@@ -6,12 +6,6 @@
       "type": "string"
     },
 
-    "certpfx": {
-      "type": "string",
-      "metadata": {
-        "description": "Key Vault Secret that contains a PFX certificate"
-      }
-    },
     "webSiteName": {
       "type": "string",
       "minLength": 3
@@ -68,14 +62,14 @@
       "type": "string",
       "minLength": 1
     },
-    "testDBEdition": {
+    "TestDBEdition": {
       "type": "string",
       "defaultValue": "Standard",
       "allowedValues": [
         "Standard"
       ]
     },
-    "prodDBEdition": {
+    "ProdDBEdition": {
       "type": "string",
       "defaultValue": "Standard",
       "allowedValues": [
@@ -145,7 +139,7 @@
             "[resourceId('Microsoft.Sql/servers/', variables('sqlserverName'))]"
           ],
           "properties": {
-            "edition": "[parameters('prodDBEdition')]",
+            "edition": "[parameters('ProdDBEdition')]",
             "collation": "[variables('collation')]",
             "maxSizeBytes": "[parameters('maxSizeBytes')]",
             "requestedServiceObjectiveName": "[parameters('requestedServiceObjectiveName')]"
@@ -164,7 +158,7 @@
           },
           "properties": {
             "collation": "[variables('collation')]",
-            "edition": "[parameters('testDBEdition')]",
+            "edition": "[parameters('TestDBEdition')]",
             "maxSizeBytes": "[parameters('maxSizeBytes')]",
             "requestedServiceObjectiveName": "[parameters('requestedServiceObjectiveName')]"
           }
@@ -189,18 +183,6 @@
       }
     },
     {
-      "type": "Microsoft.Web/certificates",
-      "name": "udirtechpfx",
-      "apiVersion": "2016-03-01",
-      "location": "[resourceGroup().location]",
-      "dependsOn": [ "[resourceId('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]" ],
-      "properties": {
-        "keyVaultId": "[parameters('keyVaultId')]",
-        "keyVaultSecretName": "[parameters('mycertpfx')]",
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
-      }
-    },
-    {
       "apiVersion": "2015-08-01",
       "name": "[variables('webSiteName')]",
       "type": "Microsoft.Web/sites",
@@ -213,21 +195,7 @@
       "properties": {
         "name": "[variables('webSiteName')]",
         "clientAffinityEnabled": false,
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]",
-        "certificates": {
-          "udirpfx": {
-            "keyVaultId": "/subscriptions/eb343230-1e12-4578-aba4-8e40f8de80f1/resourceGroups/SharedResourcesRG/providers/Microsoft.KeyVault/vaults/ETF-Vault",
-            "keyVaultSecretName": "udirtechpfx"
-          }
-        },
-        "hostNameSslStates": [
-          {
-            "name": "[variables('customDomain')]",
-            "sslState": "SniEnabled",
-            "thumbprint": "[reference(resourceId('Microsoft.Web/certificates','udirnopfx')).Thumbprint]",
-            "toUpdate": true
-          }
-        ]
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
       },
       "resources": [
         {
@@ -287,20 +255,6 @@
           }
         },
         {
-          "name": "[concat(variables('webSiteName'),'/',variables('customDomain'))]",
-          "apiVersion": "2015-08-01",
-          "type": "Microsoft.Web/sites/hostNameBindings",
-          "location": "[resourceGroup().location]",
-          "dependsOn": [
-            "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
-          ],
-          "properties": {
-            "siteName": "[variables('webSiteName')]",
-            "domainId": null,
-            "hostNameType": "Verified"
-          }
-        },
-        {
           "apiVersion": "2015-08-01",
           "name": "test",
           "type": "slots",
@@ -357,8 +311,7 @@
         "displayName": "AutoScaleSettings"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-        "[resourceId('Microsoft.Web/certificates/', 'udirtechpfx')]"
+        "[resourceId('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
       ],
       "properties": {
         "profiles": [

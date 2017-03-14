@@ -2,16 +2,18 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "keyVaultId": {
+      "value": "/subscriptions/9539bc24-8692-4fe2-871e-3733e84b1b73/resourceGroups/bekkopstorage/Microsoft.KeyVault/vaults/bekkopsVault"
+    },
     "webSiteName": {
-      "value": "cloudlabwebapp"
+      "value": "cloudlabswebapp"
     },
     "azuresqlName": {
-      "value": "cloudlabwebappdbserver"
+      "value": "cloudlabsdbserver"
     },
     "hostingPlanName": {
-      "value": "cloudlabwebfarm"
+      "value": "cloudlabshostingplan"
     },
-
     "hostingPlanSkuName": {
       "value": "S2"
     },
@@ -21,7 +23,7 @@
     },
 
     "administratorLogin": {
-      "value": "cloudlabadmin"
+      "value": "adminusername"
     },
     "prodDatabaseName": {
       "value": "proddb"

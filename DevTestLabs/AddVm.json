@@ -11,7 +11,7 @@
     },
     "size": {
       "type": "string",
-      "defaultValue": "Standard_F8s"
+      "defaultValue": "Standard_F4s"
     },
     "userName": {
       "type": "string"

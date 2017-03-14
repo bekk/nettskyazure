@@ -1,0 +1,94 @@
+{
+  "appId": "885ff547-8d38-495c-b310-a5d84a694382",
+  "appRoles": [
+    {
+      "allowedMemberTypes": [
+        "User"
+      ],
+      "description": "Admins can manage roles and perform all task actions.",
+      "displayName": "Admin",
+      "id": "81e10148-16a8-432a-b86d-ef620c3e48ef",
+      "isEnabled": true,
+      "origin": "Application",
+      "value": "Admin"
+    },
+    {
+      "allowedMemberTypes": [
+        "User"
+      ],
+      "description": "Super User",
+      "displayName": "SuperUser",
+      "id": "2E983C28-0130-4BBE-BFBF-A4B0B0CAFAA4",
+      "isEnabled": true,
+      "origin": "Application",
+      "value": "SuperUser"
+    }
+  ],
+  "availableToOtherTenants": false,
+  "displayName": "AzureAdAuth",
+  "errorUrl": null,
+  "groupMembershipClaims": null,
+  "homepage": "https://localhost:44320/",
+  "identifierUris": [
+    "https://nettskyprogrammet.onmicrosoft.com/AzureAdAuth"
+  ],
+  "keyCredentials": [],
+  "knownClientApplications": [],
+  "logoutUrl": null,
+  "oauth2AllowImplicitFlow": false,
+  "oauth2AllowUrlPathMatching": false,
+  "oauth2Permissions": [
+    {
+      "adminConsentDescription": "Allow the application to access AzureAdAuth on behalf of the signed-in user.",
+      "adminConsentDisplayName": "Access AzureAdAuth",
+      "id": "43345a17-f729-405a-beb5-5c17d21bb89b",
+      "isEnabled": true,
+      "type": "User",
+      "userConsentDescription": "Allow the application to access AzureAdAuth on your behalf.",
+      "userConsentDisplayName": "Access AzureAdAuth",
+      "value": "user_impersonation"
+    }
+  ],
+  "oauth2RequirePostResponse": false,
+  "passwordCredentials": [
+    {
+      "customKeyIdentifier": null,
+      "endDate": "2017-12-20T13:13:55.1345976Z",
+      "keyId": "83fe85b2-8d4a-42e4-af2b-fd6ffef76bb9",
+      "startDate": "2016-12-20T13:13:55.1345976Z",
+      "value": null
+    }
+  ],
+  "publicClient": false,
+  "replyUrls": [
+    "https://localhost:44320/"
+  ],
+  "requiredResourceAccess": [
+    {
+      "resourceAppId": "00000002-0000-0000-c000-000000000000",
+      "resourceAccess": [
+        {
+          "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
+          "type": "Scope"
+        },
+        {
+          "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04",
+          "type": "Scope"
+        }
+      ]
+    }
+  ],
+  "samlMetadataUrl": null,
+  "extensionProperties": [],
+  "objectType": "Application",
+  "objectId": "849631f2-040d-46d6-b3a5-9ec654600ddb",
+  "deletionTimestamp": null,
+  "createdOnBehalfOf": null,
+  "createdObjects": [],
+  "manager": null,
+  "directReports": [],
+  "members": [],
+  "memberOf": [],
+  "owners": [],
+  "ownedObjects": []
+}

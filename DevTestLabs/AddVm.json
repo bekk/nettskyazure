@@ -7,6 +7,7 @@
     },
     "newVMName": {
       "type": "string"
+      "defaultValue" : "VS2017CommunityWK2016"
     },
     "labName": {
       "type": "string",
@@ -34,7 +35,7 @@
     {
       "apiVersion": "2016-05-15",
       "type": "Microsoft.DevTestLab/labs/virtualmachines",
-      "name": "[variables('vmName')]",
+      "name": "[concat(variables('vmName')-', copyIndex())",
       "location": "[resourceGroup().location]",
       "properties": {
         "labVirtualNetworkId": "[variables('labVirtualNetworkId')]",

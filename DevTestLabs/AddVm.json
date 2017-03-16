@@ -4,6 +4,7 @@
   "parameters": {
     "numberOfVMs": {
       "type": "int"
+      "defaultValue": 1
     },
     "newVMName": {
       "type": "string"
@@ -35,7 +36,7 @@
     {
       "apiVersion": "2016-05-15",
       "type": "Microsoft.DevTestLab/labs/virtualmachines",
-      "name": "[concat(variables('vmName')-', copyIndex())",
+      "name": "[concat(variables('vmName'), copyIndex())",
       "location": "[resourceGroup().location]",
       "properties": {
         "labVirtualNetworkId": "[variables('labVirtualNetworkId')]",

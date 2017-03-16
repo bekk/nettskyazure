@@ -8,7 +8,7 @@
     },
     "newVMName": {
       "type": "string",
-      "defaultValue" : "VS2017CommunityWK2016"
+      "defaultValue" : "vs2017vm"
     },
     "labName": {
       "type": "string",

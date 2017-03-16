@@ -38,6 +38,10 @@
       "type": "Microsoft.DevTestLab/labs/virtualmachines",
       "name": "[concat(variables('vmName'), copyIndex())]",
       "location": "[resourceGroup().location]",
+      "copy": {
+        "name": "vmcopy",
+        "count": "[parameters('numberOfVMs')]"
+      },
       "properties": {
         "labVirtualNetworkId": "[variables('labVirtualNetworkId')]",
         "notes": "Visual Studio Community 2017 on Windows Server 2016 (x64)",

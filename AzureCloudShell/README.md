@@ -1,6 +1,6 @@
 # Azure Cloud Shell Introduction
 
-##Bash features:
+## Bash features:
 + tab completion
 + uname -a
 + history

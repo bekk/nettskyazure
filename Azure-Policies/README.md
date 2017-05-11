@@ -13,7 +13,13 @@ Azure Resource Policies make sure that resources are placed in the correct resou
 
 ```bash
 script="`wget -O - https://raw.githubusercontent.com/bekk/nettskyazure/master/Azure-Policies/location-policy.json`"
-az policy definition create --name NordinePol --rules "$script"
+az policy definition create --name NorPol --rules "$script"
 ```
 
-# Apply a policy
+# Assign a policy
+
+```bash
+$subscriptionid=""
+$targetresourcegroupname=""                           
+az policy assignment create --name NorPolAssignment --policy NorPolDef --scope /subscriptions/$subscriptionid/resourceGroups/$targetresourcegroupname
+```

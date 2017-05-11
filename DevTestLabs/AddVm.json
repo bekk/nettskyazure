@@ -44,11 +44,11 @@
       },
       "properties": {
         "labVirtualNetworkId": "[variables('labVirtualNetworkId')]",
-        "notes": "Visual Studio Community 2017 on Windows Server 2016 (x64)",
+        "notes": "Visual Studio Community 2017 (version 15.2) on Windows Server 2016 (x64)",
         "galleryImageReference": {
           "offer": "VisualStudio",
           "publisher": "MicrosoftVisualStudio",
-          "sku": "VS-2017-Comm-WS2016",
+          "sku": "VS-2017-Comm-v152-WS2016",
           "osType": "Windows",
           "version": "latest"
         },

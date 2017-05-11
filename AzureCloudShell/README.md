@@ -7,6 +7,4 @@ script="`wget -O - https://raw.githubusercontent.com/bekk/nettskyazure/master/Az
 
 echo "$script"
 
-eval "$script"
-
-```
+eval "$script" ```

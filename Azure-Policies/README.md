@@ -9,3 +9,11 @@ Azure Resource Policies make sure that resources are placed in the correct resou
 + Create a Policy that denies all deployments outside of North Europe
 + Try to create a storage in West Europe 
 
+# Create a custom policy
+
+```bash
+script="`wget -O - https://raw.githubusercontent.com/bekk/nettskyazure/master/Azure-Policies/location-policy.json`"
+az policy definition create --name NordinePol --rules "$script"
+```
+
+# Apply a policy
